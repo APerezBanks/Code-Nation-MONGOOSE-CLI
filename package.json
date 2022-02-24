@@ -1,0 +1,25 @@
+{
+  "name": "mongoosecli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/APerezBanks/CNMONGOOSECLI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/APerezBanks/CNMONGOOSECLI/issues"
+  },
+  "homepage": "https://github.com/APerezBanks/CNMONGOOSECLI#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "mongoose": "^6.2.3",
+    "yargs": "^17.3.1"
+  }
+}
