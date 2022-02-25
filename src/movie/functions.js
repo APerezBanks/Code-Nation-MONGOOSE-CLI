@@ -1,3 +1,4 @@
+const { exitProcess } = require("yargs");
 const Movie = require("./model");
 
 
@@ -20,17 +21,25 @@ exports.list = async () => {
 }
 // CRUD > Update
 
-exports.update = async (title, actorNew, yearNew ) => {
-        try {
-        return await Movie.updateOne({title: title} ,{actor: actorNew }, { year: yearNew} );
-      } catch (error) {
-          console.log(error);
-      }
+            exports.update = async (title, actorNew, yearNew ) => {
+                try {
+            // const movie = await Movie.findOne({title: title}).exec()
+            // console.log(movie)
+                return await Movie.updateOne({title: title} ,{actor: actorNew });
+            } catch (error) {
+                console.log(error);
+            }
+
+
+
    // Crud > Delete
     }
 exports.deleteM =  async (title, actor) => {
+  
        try {
-           return await Movie.deleteOne({ title: title}, {actor})
+           return await Movie.deleteOne({ title: title}, {actor: actor});
+           
+   
            
        } catch (error) {
            console.log(error)

@@ -2,8 +2,8 @@ require("./db/connection");
 // this above runs first everything in the connection.js
 const mongoose = require ("mongoose");
 const yargs = require("yargs");
-const {addMovie, list, update, deleteM } = require("./movie/functions");
-const {addShow, listTV, updateTV, deleteTV } = require("./tv/functionstv");
+const {addMovie, list, update, deleteM} = require("./movie/functions");
+// const {addShow, listTV, updateTV, deleteTV } = require("./tv/functionstv");
 
 // Task:
 // • Create a CLI that allows users to store movies in a MongoDB database using mongoose.
@@ -23,10 +23,10 @@ const app = async (yargsObj) => {
             //list functionality
 
         } else if (yargsObj.update) {
-            console.log(await update(yargsObj.actorNew, yargsObj.title, yargsObj.year));
+            console.log(await update(yargsObj.title,yargsObj.actorNew, yargsObj.yearNew));
 
         } else if (yargsObj.deleteM) {
-            console.log (await deleteM(yargsObj.title, yargsObj.title, yargsObj.year));
+            console.log (await deleteM(yargsObj.title, yargsObj.actor, yargsObj.year));
             
         } else {
             console.log("Incorrect command");
@@ -39,33 +39,3 @@ const app = async (yargsObj) => {
 }
 
 app(yargs.argv);
-
-
-// const appTv = async (yargsObj) => {
-//     try {
-//         if (yargsObj.add) {
-//             console.log( await addShow(yargsObj.title, yargsObj.actor, yargsObj.year));
-//             // add functionality
-
-//         } else if ( yargsObj.listTV) {
-//             console.log(await listTV());
-//             //list functionality
-
-//         } else if (yargsObj.updateTV) {
-//             console.log(await updateTV(yargsObj.actorNew, yargsObj.title, yargsObj.year));
-
-//         } else if (yargsObj.deleteTV) {
-//             console.log (await deleteTV(yargsObj.title, yargsObj.title, yargsObj.year));
-            
-//         } else {
-//             console.log("Incorrect command");
-//         }
-//         await mongoose.disconnect();
-//     } catch (error) {
-//         console.log(error)
-        
-//     }
-// }
-
-
-// appTv(yargs.argv);
